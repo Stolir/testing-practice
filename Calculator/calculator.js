@@ -11,5 +11,9 @@ export const calculator = function() {
     return x / y
   }
 
-  return { add, subtract, divide }
+  const multiply = (x, y) => {
+    return x * y
+  }
+
+  return { add, subtract, divide, multiply }
 }()
