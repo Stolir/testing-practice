@@ -7,5 +7,9 @@ export const calculator = function() {
     return x - y;
   }
 
-  return { add, subtract }
+  const divide = (x, y) => {
+    return x / y
+  }
+
+  return { add, subtract, divide }
 }()
