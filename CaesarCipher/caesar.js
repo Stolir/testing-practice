@@ -12,7 +12,7 @@ export function caesarCipher(string, key) {
       cipheredText += cipherTable.at(index);
     }
   }
-  return cipheredText;
+  return applyCasing(string, cipheredText);
 }
 
 function generateCeaserTable(key) {
@@ -30,3 +30,23 @@ function generateCeaserTable(key) {
   return table;
 }
 
+
+function isUpperCase(text) {
+  return text === text.toUpperCase();
+} 
+
+function applyCasing(string, cipheredString) {
+  let caseSensitiveText = "";
+  for (let char in string) {
+    if (!alphabet.includes(string.charAt(char).toUpperCase())) {
+      caseSensitiveText += string.charAt(char)
+    }
+    else if (isUpperCase(string.charAt(char))) {
+      caseSensitiveText += cipheredString.charAt(char).toUpperCase();
+    }
+    else {
+      caseSensitiveText += cipheredString.charAt(char).toLowerCase()
+    }
+  }
+  return caseSensitiveText;
+}
