@@ -2,6 +2,8 @@ export function analyzeArray(array) {
   let analyzed = {}
   analyzed.average = getAverage(array);
   analyzed.min = getMin(array);
+  analyzed.max = getMax(array);
+  analyzed.length = array.length;
   return analyzed;
 }
 
@@ -16,5 +18,11 @@ function getAverage(array) {
 function getMin(array) {
   return array.reduce((minValue, currentValue) => {
     return currentValue < minValue ? currentValue : minValue;
+  }, array[0])
+}
+
+function getMax(array) {
+  return array.reduce((minValue, currentValue) => {
+    return currentValue > minValue ? currentValue : minValue;
   }, array[0])
 }
